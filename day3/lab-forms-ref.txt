@@ -1,0 +1,39 @@
+# Lab: Forms and Ref
+
+## Ex1. Read and Write
+
+Create a form composed of two <input /> fields and a button:
+
+<form>
+  <input type="text" />
+  <input type="text" readOnly />
+  <input type="submit" value="Copy" />
+</form>
+
+When a user clicks on the button or clicks "Enter" in an input field (i.e. submits the form), the text should be copied from the first input to the second.
+
+Solve this using both methods:
+
+1. Use ref to access the inputs and change the values
+
+2. Store the text in state
+
+## Ex2. Convert multiple input fields to JSON
+
+Create a form composed of multiple input fields:
+
+<form>
+  <input type="text" name="username" />
+  <input type="password" name="password" />
+  <input type="checkbox" name="remember" />
+  <select name="gender">
+    <option value="m">Male</option>
+    <option value="f">Female</option>
+  </select>
+  <textarea name="bio"></textarea>
+
+  <input type="submit" value="Send" />
+</form>
+
+When the user submits the form, create a JSON object from all the fields and print it to the screen into a <div> element below the form. In the JSON object the key for each field is the field's name and the value is the text written in the field. Use a single "ref" attribute on the top <form> element to get all the data.
+
