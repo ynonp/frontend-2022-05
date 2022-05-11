@@ -1,6 +1,7 @@
 ## Day 1 - Writing Web Applications
 
-- [x] Web Application Architecture and History (slides, 1 hour)
+- Intro
+  - [x] Web Application Architecture and History (slides, 1 hour)
 
 - HTML & CSS
   - [x] Web Deveopment Workflow with Vite
