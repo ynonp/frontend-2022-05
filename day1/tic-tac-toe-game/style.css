@@ -1,0 +1,31 @@
+html, body {
+  padding: 0;
+  margin: 0;
+}
+
+.game {
+  border: 1px solid grey;
+  background-color: purple;
+  margin: 10px auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+}
+
+.game > div {
+  background: #fab3b3;
+  font-size: max(4vw, 4vh);
+  line-height: max(10vh, 10vw);
+  text-align: center;
+  min-height: max(10vw, 10vh);
+  max-height: 30vh;
+}
+
+
+
+
+
+
+
+
