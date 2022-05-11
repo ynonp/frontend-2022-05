@@ -6,15 +6,27 @@ class UI {
     this.root = el;
   }
 
+  setOnClickHandler(handler) {
+    this.onClick = handler;
+  }
+
   showCards(cards) {
     const frag = document.createDocumentFragment();
     for (const card of cards) {
       const cardDiv = document.createElement('div');
+      cardDiv.addEventListener('click', () => {
+        this.onClick(card.id);
+      });
+
       cardDiv.classList.add('card');
-      cardDiv.textContent = card;
+      if (card.visible) {
+        cardDiv.classList.add('visible');
+      }
+      cardDiv.textContent = card.value;
       frag.appendChild(cardDiv);
     }
 
+    this.root.innerHTML = '';
     this.root.appendChild(frag);
   }
 }

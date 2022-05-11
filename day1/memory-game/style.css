@@ -6,3 +6,25 @@
   color: #2c3e50;
   margin-top: 60px;
 }
+
+.game {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-row-gap: 5px;
+  grid-column-gap: 5px;
+}
+
+.card {
+  background: #adadad;
+  padding: 10px;
+  text-align: center;
+  color: transparent;
+}
+
+.card.visible {
+  color: black;
+}
+
+
+
+
