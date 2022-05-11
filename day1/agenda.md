@@ -7,10 +7,10 @@
   - [x] Web Deveopment Workflow with Vite
   - [x] Lab - Create Tic-Tac-Toe Game Board
 
-- JavaScript
-  - [ ] ES Modules
-  - [ ] Handling Events - Change sidebar to sliding drawer with hamburger menu
-  - [ ] Lab - Implement Tic Tac Toe game board
+- JavaScript: [https://www.tocode.co.il/bundles/es6](https://www.tocode.co.il/bundles/es6)
+  - [x] ES Modules
+  - [ ] Handling Events - turn a card when it's clicked
+  - [ ] Lab - Implement Tic Tac Toe gameplay
 
 - Async JavaScript (*)
   - [ ] Promises
