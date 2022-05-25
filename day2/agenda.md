@@ -6,7 +6,7 @@
 - [x] Working with JSX
 - [x] Props
 - [x] State
-- [ ] Lab: Writing Basic React Components
+- [x] Lab: Writing Basic React Components
       https://www.tocode.co.il/bundles/react/lessons/11-components-lab
 
 - [ ] Saving an Array or Object in State
