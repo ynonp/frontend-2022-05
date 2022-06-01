@@ -9,7 +9,7 @@ export default function ImageSelector() {
   return (
     <ul className="image-selector">
       {images.map((imageName, index) => (
-        <li key={imageName}>
+        <li key={imageName} className={index === 0 ? 'active' : ''}>
           <a href="#">{imageName}</a>
         </li>
       ))}
