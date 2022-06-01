@@ -2,6 +2,16 @@
   text-align: center;
 }
 
+.image {
+  display: grid;
+  grid-template-columns: repeat(8, 20px);
+  grid-template-rows: repeat(8, 20px);
+}
+
+.square {
+  border: 1px solid #a0a0a0;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
