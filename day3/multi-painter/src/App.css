@@ -8,6 +8,18 @@
   grid-template-rows: repeat(8, 20px);
 }
 
+.split {
+  display: flex;
+}
+
+.image-selector {
+  width: 300px;
+}
+
+.painter {
+  flex: 1;
+}
+
 .square {
   border: 1px solid #a0a0a0;
 }

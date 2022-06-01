@@ -1,3 +1,5 @@
+import image from './dl/image';
+import { observer } from 'mobx-react-lite';
 
 function palette(value) {
     return [
@@ -9,15 +11,14 @@ function palette(value) {
     ][value];
 }
 
-export default function Painter(props) {
-    const { image } = props;
-
+export default observer(function Painter(props) {
+    const imageData = image.data;
     return (
-        <div>
+        <div className='painter'>
             <pre>{JSON.stringify(image)}</pre>
             <div className="image">
             {
-                image.map((line, lineIndex) => (
+                imageData.map((line, lineIndex) => (
                     line.map((square, columnIndex) => (
                         // <div className={`square ${palette(square)}`} ></div>
                         <div
@@ -26,6 +27,7 @@ export default function Painter(props) {
                             style={{
                                 backgroundColor: palette(square),
                             }}
+                            onClick={() => image.paint(lineIndex, columnIndex, 1)}
                         />
                     ))
                 ))
@@ -33,4 +35,4 @@ export default function Painter(props) {
             </div>
         </div>
     )
-}
+});
