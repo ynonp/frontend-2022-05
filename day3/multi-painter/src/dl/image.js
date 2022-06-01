@@ -8,15 +8,22 @@ class Image {
     );
     */
     this.reset();
+    this.currentColor = 1;
     makeObservable(this, {
       data: observable,
+      currentColor: observable,
       paint: action,
       reset: action,
+      setColor: action,
     })
   }
 
-  paint(rowIndex, columnIndex, color) {
-    this.data[rowIndex][columnIndex] = color;
+  setColor(value) {
+    this.currentColor = value;
+  }
+
+  paint(rowIndex, columnIndex) {
+    this.data[rowIndex][columnIndex] = this.currentColor;
   }
 
   reset() {
@@ -38,7 +45,7 @@ const mainImage = new Image();
 
 window.mainImage = mainImage;
 
-export default mainImage;
+export default Image;
 
 
 

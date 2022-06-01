@@ -1,17 +1,10 @@
-import image from './dl/image';
+import repo from '../dl/images_repo';
 import { observer } from 'mobx-react-lite';
-
-function palette(value) {
-    return [
-        'white',
-        'black',
-        'red',
-        'green',
-        '#2202AA',
-    ][value];
-}
+import palette from '../dl/palette';
 
 export default observer(function Painter(props) {
+;
+    const image = repo.activeImage;
     const imageData = image.data;
     return (
         <div className='painter'>
@@ -25,9 +18,9 @@ export default observer(function Painter(props) {
                             className="square"
                             key={`${lineIndex}-${columnIndex}`}
                             style={{
-                                backgroundColor: palette(square),
+                                backgroundColor: palette.getColor(square),
                             }}
-                            onClick={() => image.paint(lineIndex, columnIndex, 1)}
+                            onClick={() => image.paint(lineIndex, columnIndex)}
                         />
                     ))
                 ))
