@@ -4,6 +4,10 @@ import repo from '../dl/images_repo';
 export default observer(function ImageSelector() {
   const images = repo.imageNames;
   return (
+    <div>
+    <button onClick={() => repo.addImage()}>Add Image</button>
+    <button onClick={repo.addImage}>Add Image</button>
+
     <ul className="image-selector">
       {images.map((imageName, index) => (
         <li key={imageName}
@@ -18,5 +22,7 @@ export default observer(function ImageSelector() {
         </li>
       ))}
     </ul>
+
+    </div>
   )
 });

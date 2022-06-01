@@ -8,4 +8,8 @@
 npm create vite@latest
 ```
 
+2. Install mobx
 
+```
+npm install --save mobx mobx-react-lite
+```

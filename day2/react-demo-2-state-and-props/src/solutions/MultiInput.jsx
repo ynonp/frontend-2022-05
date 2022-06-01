@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { line } from './utils';
+import { line as repeat } from './utils';
 
 export default function MultiInput(props) {
     const { inputCount=50 } = props;
@@ -11,7 +11,7 @@ export default function MultiInput(props) {
 
     return (
         <div>
-            {line(inputCount).map(() => (
+            {repeat(inputCount).map(() => (
                 <input
                     value={text}
                     placeholder="Please type something ..."

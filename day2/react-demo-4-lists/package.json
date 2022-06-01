@@ -1,5 +1,5 @@
 {
-  "name": "multi-painter",
+  "name": "react-demo-4-lists",
   "private": true,
   "version": "0.0.0",
   "scripts": {
@@ -8,9 +8,6 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "antd": "^4.20.7",
-    "mobx": "^6.6.0",
-    "mobx-react-lite": "^3.4.0",
     "react": "^18.0.0",
     "react-dom": "^18.0.0"
   },

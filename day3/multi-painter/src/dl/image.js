@@ -1,4 +1,4 @@
-import { makeObservable, observable, action } from 'mobx';
+import { makeObservable, observable, action, computed } from 'mobx';
 
 class Image {
   constructor() {
@@ -15,7 +15,13 @@ class Image {
       paint: action,
       reset: action,
       setColor: action,
+
+      paintedPixelsCount: computed,
     })
+  }
+
+  get paintedPixelsCount() {
+    return this.data.flat().filter(x => x !== 0).length;
   }
 
   setColor(value) {

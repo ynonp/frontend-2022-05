@@ -11,7 +11,10 @@ class ImagesRepo {
     makeObservable(this, {
       images: observable,
       activeImageName: observable,
+      
+      addImage: action.bound,      
       selectImage: action,
+
       imageNames: computed,
       activeImage: computed,
     });
@@ -23,7 +26,7 @@ class ImagesRepo {
 
   addImage() {
     let newImageName = 'New Image';
-    let index = 0;
+    let index = 2;
 
     while(!!this.images[newImageName]) {
       newImageName = `New Image ${index++}`

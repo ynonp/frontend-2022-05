@@ -2,6 +2,9 @@ import './App.css'
 import Painter from './painter';
 import ImageSelector from './image_selector';
 import ColorPicker from './color_picker';
+import TableImageSelector from './table_image_selector';
+import 'antd/dist/antd.css';
+
 // Repo is here:
 // https://github.com/ynonp/frontend-2022-05/
 
@@ -16,6 +19,11 @@ import ColorPicker from './color_picker';
 // 3. Is Active (only one is active)
 // 4. (Bonus) small thumbnail of the image
 
+
+// To install antd:
+// 1. From shell: npm install --save antd
+// 2. In App: import 'antd/dist/antd.css';
+
 // (*) talk about inline style
 
 function App() {
@@ -27,6 +35,7 @@ function App() {
         <Painter />
       </div>
       <ColorPicker />
+      <TableImageSelector />
     </div>
     
   )
