@@ -22,7 +22,11 @@ const columns = [
   {
     title: 'Thumbnail',
     dataIndex: 'image',
-    render: (image) => (<div className="thumbnail"><ViewImage image={image} /></div>)
+    render: (image) => (
+      <div className="thumbnail">
+        <ViewImage image={image} readOnly />
+      </div>
+    )
   }
 ];
 

@@ -1,8 +1,10 @@
 import { observer } from 'mobx-react-lite';
 import palette from '../dl/palette';
 
+const noop = () => false;
+
 export default observer(function ViewImage(props) {
-  const { image } = props;
+  const { image, readOnly=false } = props;
   const imageData = image.data;
   return (
     <div className="image">
@@ -16,7 +18,7 @@ export default observer(function ViewImage(props) {
               style={{
                 backgroundColor: palette.getColor(square),
               }}
-              onClick={() => image.paint(lineIndex, columnIndex)}
+              onClick={readOnly ? noop : () => image.paint(lineIndex, columnIndex)}
             />
           ))
         ))
