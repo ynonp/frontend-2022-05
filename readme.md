@@ -22,7 +22,7 @@ npm install --save mobx mobx-react-lite
 2. Install socketio library:
 
 ```
-pip install python-socketio
+pip install python-socketio aiohttp
 ```
 
 3. Run example python server code
