@@ -1,4 +1,27 @@
+import { useState } from 'react';
+import { useSocket, useSocketEvent } from 'socket.io-react-hook';
+
 function App() {
+  const [linkText, setLinkText] = useState('');
+  const { socket, error } = useSocket('http://localhost:8080');  
+  const { lastMessage } = useSocketEvent(socket, 'links');
+
+  const links = lastMessage || [];
+  console.log(lastMessage);
+
+  function share() {
+    socket.emit('share', linkText);
+  }
+
+  function like(href) {
+    socket.emit('like', href);
+  }
+
+  function dislike(href) {
+    socket.emit('unlike', href);
+  }
+
+
   return (
     <div>
       <h1>Your Job</h1>
@@ -13,32 +36,22 @@ function App() {
       <div>
         <label>
           Share a site you like:
-          <input type="text" />
+          <input type="text" value={linkText} onChange={(e) => setLinkText(e.target.value)} />
         </label>
-        <button>Send</button>
+        <button onClick={share}>Send</button>
       </div>
 
       <div>
         <h2>Shared Sites</h2>
         <ul>
-          <li>
-            <button>-1</button>
-            <span>[19] </span>
-            <button>+1</button>
-            <a href="https://duckduckgo.com/" target="_blank">https://duckduckgo.com/</a>
-          </li>
-          <li>
-            <button>-1</button>
-            <span>[15] </span>
-            <button>+1</button>
-            <a href="https://www.ecosia.org/" target="_blank">https://www.ecosia.org/</a>
-          </li>
-          <li>
-            <button>-1</button>
-            <span>[10] </span>
-            <button>+1</button>
-            <a href="https://www.bing.com/" target="_blank">https://www.bing.com/</a>
-          </li>
+          {links.map(link => (
+            <li key={link.href}>
+              <button onClick={() => like(link.href)} >+1</button>
+              <span>[{link.likes} ]</span>
+              <button onClick={() => dislike(link.href)}>-1</button>
+              <a href={link.href} target="_blank">{link.href}</a>
+            </li>
+          ))}
         </ul>
       </div>
     </div>
