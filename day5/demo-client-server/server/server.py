@@ -13,5 +13,5 @@ async def print_message(sid, message):
     await sio.emit('message', message, broadcast=True);
 
 if __name__ == '__main__':
-    web.run_app(app)
+    web.run_app(app, port=8080)
 
