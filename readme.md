@@ -26,3 +26,6 @@ pip install python-socketio aiohttp
 ```
 
 3. Run example python server code
+
+4. Bonus - sio is a command line debug tool for socket.io:
+[https://github.com/connor4312/sio](https://github.com/connor4312/sio)
