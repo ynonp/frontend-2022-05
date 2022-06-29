@@ -1,12 +1,20 @@
-## Day 4 - Managing Global Data
-[ ] useReducer and Context
-[ ] Demo - Create darkMode context
-[ ] Lab - Create multiple synched tic-tac-toe games. All state is saved in a top level context
+## Day 5 - Backend Python Server
+- [ ] Python async/await:
+    - https://www.tocode.co.il/past_workshops/89
 
-[ ] Introduction to MobX (slides)
-[ ] Demo - Create multiple synched tic-tac-toe games. All state is saved in a top level context
-[ ] Lab - Create a Star Wars API MobX Data Structure and build a tree in the GUI
-[ ] Lab Bonus - Use Antd to show the tree
+- [ ] Intro To Python Socket.IO
+    - https://www.tocode.co.il/blog/2021-11-socket-io-python-react
+    - https://www.tocode.co.il/blog/2022-05-react-python-socketio-run-shell-commands
+
+- [ ] Lab - Convert Echo server example to Chat
+- [ ] Lab - python-system-runner.txt
+
+- [ ] React Router
+
+
+
+
+
 
 
 

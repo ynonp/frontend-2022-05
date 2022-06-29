@@ -1,7 +1,8 @@
-import { useState } from 'react'
+import React, { useState, useCallback, memo, useDeferredValue } from 'react'
+// npm install --save tinycolor2
 import tinycolor from 'tinycolor2';
 
-function ColorBox(props) {
+const ColorBox = memo(function ColorBox(props) {
   const { start, spin, onClick, id } = props;
   const color = tinycolor(start).spin(spin).toString();
   console.log('ColorBox');
@@ -11,27 +12,28 @@ function ColorBox(props) {
       onClick={onClick}
       data-id={id}
       style={{
-        width: '100px',
-        height: '100px',
+        width: '50px',
+        height: '50px',
         background: color,
 
         display: 'inline-block',
         margin: '5px',
       }} >{id}</div>
   );
-}
+});
 
 function ColorPalette(props) {
   console.log('ColorPalette');
 
   const { start } = props;
   const [deletedBoxes, setDeletedBoxes] = useState(new Set());
+  const [_, setForceRender] = useState(false);
 
-  function removeBox(e) {
+  const removeBox = useCallback(function removeBox(e) {
     const id = e.target.dataset.id;
     deletedBoxes.add(Number(id));
-    setDeletedBoxes(new Set(deletedBoxes));
-  }
+    setForceRender(x => !x);
+  }, [deletedBoxes, setForceRender]);
 
   const colors = [];
   for (let i=-360; i < 360; i++) {
@@ -43,23 +45,40 @@ function ColorPalette(props) {
         spin={i}
         onClick={removeBox}
         id={i}
+        key={i}
       />
     );
   }
-  return colors;
+
+  function reset() {
+    setDeletedBoxes(new Set());
+  }
+
+  return (
+    <>
+      <button onClick={reset}>Reset</button>
+      {colors}
+    </>
+  );
 }
 
-function App() {
+function Counter() {
   const [ticks, setTicks] = useState(0);
+  return <button onClick={() => setTicks(v => v + 1)}>Click Me ... {ticks}</button>
+}
+
+
+function App() {
   const [color, setColor] = useState('#000000');
+  const deferredColor = useDeferredValue(color);
   console.log('ColorSelector');
   return (
     <div>
-      <button onClick={() => setTicks(v => v + 1)}>Click Me ... {ticks}</button>
+      <Counter />
       <div>
         <input type="color" value={color} onChange={(e) => setColor(e.target.value) } />
       </div>
-      <ColorPalette start={color} />
+      <ColorPalette start={deferredColor} />
     </div>
   );
 }
